@@ -26,7 +26,7 @@ public class VentasTest {
     public void TotalFactorizadoPor200Test(){
         venta.total = 2000.0;
         Double totalFactorizado = venta.factorizar();
-        assertEquals(Double.valueOf(400200), totalFactorizado);
+        assertEquals(Double.valueOf(400300), totalFactorizado);
     }
 
     @Test
