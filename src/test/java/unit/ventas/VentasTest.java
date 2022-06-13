@@ -1,5 +1,6 @@
 package unit.ventas;
 
+import model.Detalle;
 import model.Pago;
 import model.Venta;
 import org.junit.jupiter.api.BeforeEach;
@@ -55,6 +56,12 @@ public class VentasTest {
     void totalNoPuedeSerNegativo(){
         Venta venta = new Venta();
         assertFalse(venta.setTotal(-0.1));
+    }
+
+    @Test
+    void VentaTieneDetalle(){
+        Venta venta = new Venta();
+        assertNotNull(venta.detalle);
     }
 //
 //    @Test

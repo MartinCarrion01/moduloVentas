@@ -7,6 +7,16 @@ public class Venta {
     public Double total;
     private Pago pago;
     private LocalDate fecha;
+    public Detalle detalle;
+
+
+    public Venta(){
+        this.detalle = new Detalle();
+    }
+
+    public Detalle getDetalle(){
+        return this.detalle;
+    }
 
     public Double factorizar() {
         return this.total * 200.0;
