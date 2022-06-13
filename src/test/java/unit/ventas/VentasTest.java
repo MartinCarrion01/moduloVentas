@@ -16,6 +16,7 @@ public class VentasTest {
     @BeforeEach
     public void CrearVenta(){
         venta = new Venta();
+        //comentario
     }
 
     @Test()
