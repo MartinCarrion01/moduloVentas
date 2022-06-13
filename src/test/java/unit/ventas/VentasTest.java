@@ -31,7 +31,7 @@ public class VentasTest {
         venta.total = 2000.0;
         Double totalFactorizado = venta.factorizar();
         System.out.println("hola");
-        assertEquals(Double.valueOf(400000), totalFactorizado);
+        assertEquals(Double.valueOf(400200), totalFactorizado);
     }
 
     @Test
