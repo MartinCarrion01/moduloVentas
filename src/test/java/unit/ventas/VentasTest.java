@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDate;
+
 public class VentasTest {
 
     Venta venta;
@@ -42,6 +44,16 @@ public class VentasTest {
         System.out.println("Hola");
         venta.setPago(new Pago());
         assertNotNull(venta.getPago());
+    }
+    void fechaNoPuedeSerMayorALaActual(){
+        LocalDate date = LocalDate.parse("2000-01-08");
+        Venta venta = new Venta();
+        assertTrue(venta.setFecha(date));
+    }
+    @Test
+    void totalNoPuedeSerNegativo(){
+        Venta venta = new Venta();
+        assertFalse(venta.setTotal(-0.1));
     }
 //
 //    @Test
