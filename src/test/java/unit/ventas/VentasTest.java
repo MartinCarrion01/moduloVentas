@@ -38,6 +38,7 @@ public class VentasTest {
 
     @Test
     public void VentaTieneAsociadoUnPago(){
+        System.out.println("Hola");
         venta.setPago(new Pago());
         assertNotNull(venta.getPago());
     }
