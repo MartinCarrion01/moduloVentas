@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class ProductStoreTest {
     private WebDriver driver;
@@ -29,17 +30,19 @@ public class ProductStoreTest {
     }
 
     @org.junit.jupiter.api.Test
-    public void productStore() {
+    public void existeBotonCarritoYMasInformacionDetalleProductoTest() throws Exception{
         driver.get("https://www.demoblaze.com/");
         driver.manage().window().setSize(new Dimension(1424, 772));
+        Thread.sleep(10000);
         driver.findElement(By.linkText("Samsung galaxy s6")).click();
         {
-            List<WebElement> elements = driver.findElements(By.linkText("Add to cart"));
-            assert (elements.size() > 0);
+            Thread.sleep(1000);
+            List<WebElement> elements = driver.findElements(By.xpath("//a[contains(text(),'Add to cart')]"));
+            assert(elements.size() > 0);
         }
         {
             List<WebElement> elements = driver.findElements(By.id("more-information"));
-            assert (elements.size() > 0);
+            assert(elements.size() > 0);
         }
     }
 }
